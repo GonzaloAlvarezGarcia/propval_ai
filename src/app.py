@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 import joblib
 import pandas as pd
@@ -58,8 +59,8 @@ class HousingFeatures(BaseModel):
 
 @app.get("/")
 def home():
-    """Health check endpoint."""
-    return {"message": "PropVal AI API is running", "status": "active"}
+    """Redirects to Swagger UI documentation."""
+    return RedirectResponse(url="/docs")
 
 
 @app.get("/health")
