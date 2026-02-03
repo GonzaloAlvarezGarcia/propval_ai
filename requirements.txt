@@ -5,3 +5,5 @@ pandas
 joblib
 numpy
 python-dotenv
+pytest
+httpx
